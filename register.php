@@ -9,30 +9,30 @@ if (isset($_POST['registerBtn'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
-    
-    
+
+
     if ($password === $confirm_password) {
-      
+
         $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-
         $insertQuery = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
-
-        
         $runQuery = mysqli_query($db, $insertQuery);
-        
+
+
         if ($runQuery) {
-            $msg = "<div class='alert alert-success'>Registration Successful!</div>";
+            $msg = "Registration Successful!";
+            $msg_type = "success";
         } else {
-            
-            $msg = "<div class='alert alert-danger'>Error: " . mysqli_error($db) . "</div>";
+
+            $msg = "Error: " . mysqli_error($db);
+            $msg_type = "danger";
         }
     } else {
-        $msg = "<div class='alert alert-danger'>Password does not match!</div>";
+        $msg = "Password does not match!";
+        $msg_type = "danger";
     }
-}
-?>
+} ?>
 
-<?php require_once 'include/header.php'; ?> 
+<?php require_once 'include/header.php'; ?>
 
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -40,9 +40,11 @@ if (isset($_POST['registerBtn'])) {
             <div class="card border">
                 <div class="card-body p-4">
                     <h4 class="card-title mb-1">Register</h4>
-                     <?php if($msg != ""): ?>
-    <?php echo $msg; ?>
-<?php endif; ?>
+                    <?php if ($msg != "") { ?>
+                        <div class="alert alert-<?php echo $msg_type; ?> alert-dismissible fade show" role="alert">
+                            <?php echo $msg; ?>
+                        </div>
+                    <?php } ?>
                     <p class="text-muted small mb-4">Create your account to get started.</p>
 
                     <form method="POST" action="register.php">
