@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">BLOG_SYS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navRes">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navRes">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Articles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
-                    <li class="nav-item"><a class="btn btn-primary btn-sm ms-lg-3 text-white" href="#">Admin Login</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<?php include('include/header.php')?>
     <main>
         <header class="py-5 bg-white border-bottom mb-5">
             <div class="container">
@@ -254,13 +227,4 @@
         </section>
     </main>
 
-    <footer class="py-5 bg-dark text-white mt-auto">
-        <div class="container text-center">
-            <p class="mb-0 small">© 2026 Blog System. Built with Bootstrap 5.</p>
-        </div>
-    </footer>
-    <script src="asset/js/jquery/jquery-3.6.0.min.js"></script>
-    <script src="asset/js/bootstrap.bundle.js"></script>
-</body>
-
-</html>
+  <?php include('include/footer.php')?>
