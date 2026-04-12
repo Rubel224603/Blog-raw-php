@@ -3,7 +3,6 @@ require_once 'config.php';
 
 $msg = "";
 
-
 if (isset($_POST['registerBtn'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -17,12 +16,10 @@ if (isset($_POST['registerBtn'])) {
         $insertQuery = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password')";
         $runQuery = mysqli_query($db, $insertQuery);
 
-
         if ($runQuery) {
             $msg = "Registration Successful!";
             $msg_type = "success";
         } else {
-
             $msg = "Error: " . mysqli_error($db);
             $msg_type = "danger";
         }

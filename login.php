@@ -1,3 +1,32 @@
+<?php include 'config.php';
+    $msg = '';
+    if(isset($_POST['loginBtn'])){
+        // echo "success";
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $checkEmail = "select * from users where email ='$email' ";
+        $result = mysqli_query($db,$checkEmail);
+        $user = mysqli_fetch_assoc($result);  //if data exist take one row
+        if ($user){
+            if (password_verify($password, $user['password'])) {
+                echo "Login Successful! Welcome, " . $user['name'];
+                session_start();
+                $_SESSION['user_id'] = $user['id'];     
+                $_SESSION['user_name'] = $user['name'];
+
+            header("Location: dashboard.php"); 
+        } else {
+                echo "Password Invalid";
+            }
+        }else{
+           echo "Email Invalid";
+        }
+    }
+
+
+?>
+
+
 <?php require_once 'include/header.php'; ?>
 
 <div class="container py-5">
@@ -8,7 +37,7 @@
                     <h4 class="card-title mb-1">Login</h4>
                     <p class="text-muted small mb-4">Welcome back! Please sign in.</p>
 
-                    <form method="POST" action="/login.php">
+                    <form method="POST" action="login.php">
                         <div class="mb-3">
                             <label class="form-label">Email address</label>
                             <input type="email" name="email" class="form-control" placeholder="you@example.com" required>
@@ -22,7 +51,7 @@
                             <label class="form-check-label small" for="remember">Remember me</label>
                         </div>
                         <div class="d-grid mb-3">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" name='loginBtn' class="btn btn-primary">Login</button>
                         </div>
                     </form>
 
