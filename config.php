@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
 $host     = 'localhost';
 $db_name  = 'blog_manegement';
 $username = 'root';

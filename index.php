@@ -1,4 +1,8 @@
-<?php include('include/header.php')?>
+<?php 
+    include('include/header.php');
+    include('include/menu.php');
+
+?>
     <main>
         <header class="py-5 bg-white border-bottom mb-5">
             <div class="container">

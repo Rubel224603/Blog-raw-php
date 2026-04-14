@@ -1,4 +1,11 @@
-<?php include 'config.php';
+<?php
+
+    include('include/header.php');
+    include('include/menu.php');
+
+
+    include 'config.php';
+
     $msg = '';
     if(isset($_POST['loginBtn'])){
         // echo "success";
@@ -9,8 +16,7 @@
         $user = mysqli_fetch_assoc($result);  //if data exist take one row
         if ($user){
             if (password_verify($password, $user['password'])) {
-                echo "Login Successful! Welcome, " . $user['name'];
-                session_start();
+                //echo "Login Successful! Welcome, " . $user['name'];
                 $_SESSION['user_id'] = $user['id'];     
                 $_SESSION['user_name'] = $user['name'];
 

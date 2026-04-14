@@ -29,7 +29,10 @@ if (isset($_POST['registerBtn'])) {
     }
 } ?>
 
-<?php require_once 'include/header.php'; ?>
+<?php  
+    include('include/header.php');
+    include('include/menu.php');
+ ?>
 
 <div class="container py-5">
     <div class="row justify-content-center">
