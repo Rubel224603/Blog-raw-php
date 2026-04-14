@@ -1,6 +1,6 @@
 <?php
 
-    include('include/header.php');
+    include('include/style.php');
     include('include/menu.php');
 
 
@@ -33,7 +33,7 @@
 ?>
 
 
-<?php require_once 'include/header.php'; ?>
+<?php require_once 'include/style.php'; ?>
 
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -70,4 +70,4 @@
     </div>
 </div>
 
-<?php require_once 'include/footer.php'; ?>
+<?php require_once 'include/script.php'; ?>

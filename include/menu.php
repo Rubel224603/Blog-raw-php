@@ -1,4 +1,4 @@
-<?php include 'include/header.php'?>
+<?php include 'include/style.php'?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">BLOG_SYS</a>

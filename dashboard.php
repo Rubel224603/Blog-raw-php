@@ -1,23 +1,13 @@
 <?php
-  include 'config.php';
-    if(!isset($_SESSION['user_id'])){
-        header("location:login.php");
-        exit;
-        //print_r($_COOKIE);
-      
-    } else {
-        echo "success " . $_SESSION['user_id'].$_SESSION['user_name'];
-
-        echo "You are loggin!";
-    }
+include 'config.php';
+if (!isset($_SESSION['user_id'])) {
+    header("location:login.php");
+    exit;
+}
 ?>
-<?php 
-  include('include/header.php');
-   
+<?php include('include/style.php'); ?>
 
-?>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow" style="height: 56px; z-index: 1030;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow" style="height: 56px;">
     <div class="container-fluid">
         <a class="navbar-brand fw-bold border border-secondary px-2 rounded" href="#">BLOG PANEL</a>
         <div class="ms-auto d-flex align-items-center">
@@ -28,53 +18,136 @@
 </nav>
 
 <div class="container-fluid">
-    <div class="row overflow-hidden" style="height: calc(100vh - 56px);">
+    <div class="row vh-100 overflow-hidden" style="margin-top: -56px; pt-56px; padding-top: 56px;">
 
-        <nav class="col-md-3 col-lg-2 bg-white border-end d-none d-md-flex flex-column p-0"
-             style="height: calc(100vh - 56px);">
 
-            
-            <div class="px-3 pt-4 pb-2 border-bottom flex-shrink-0">
-                <p class="fw-bold mb-0 small text-uppercase text-muted">Dashboard</p>
+        <nav class="col-md-3 col-lg-2 bg-dark-subtle border-end d-none d-md-flex flex-column p-0 h-100">
+
+
+            <div class="px-2 pt-4 pb-3 bg-dark-subtle">
+                <div class="p-2 rounded-1 shadow-sm border-0 bg-dark d-flex align-items-center justify-content-center">
+                    <i class="bi bi-grid-fill text-warning me-2"></i>
+                    <span class="fw-bold text-white small text-uppercase" style="letter-spacing: 1.5px;">
+                        Dashboard
+                    </span>
+                </div>
             </div>
 
-            <div class="overflow-y-auto flex-grow-1 px-3 py-3">
+
+            <div class="px-3  flex-grow-1 overflow-auto">
                 <ul class="nav nav-pills flex-column gap-2">
+                    <!-- Posts — submenu -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link active shadow-sm">
-                            <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                        <a href="#postsMenu"
+                            class="nav-link d-flex justify-content-between align-items-center px-3 py-2 rounded-3 shadow-sm border text-dark"
+                            data-bs-toggle="collapse"
+                            role="button"
+                            aria-expanded="false">
+                            <span class="d-flex align-items-center fw-semibold">
+                                Posts
+                            </span>
+                            <i class="bi bi-chevron-down small opacity-50"></i>
                         </a>
+                        <div class="collapse" id="postsMenu">
+                            <ul class="nav flex-column ms-3 mt-1 gap-1">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link link-dark py-1">
+                                        <i class="bi bi-list me-2"></i> All Posts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link link-dark py-1">
+                                        <i class="bi bi-plus-circle me-2"></i> Create Post
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
+
+                    <!-- Categories — submenu -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark">
-                            <i class="bi bi-file-earmark-text me-2"></i> All Posts
+                        <a href="#categoriesMenu"
+                            class="nav-link d-flex justify-content-between align-items-center px-3 py-2 rounded-3 shadow-sm border text-dark"
+                            data-bs-toggle="collapse"
+                            role="button"
+                            aria-expanded="false">
+                            <span class="d-flex align-items-center fw-semibold">
+                                Categories
+                            </span>
+                            <i class="bi bi-chevron-down small opacity-50"></i>
                         </a>
+                        <div class="collapse" id="categoriesMenu">
+                            <ul class="nav flex-column ms-3 mt-1 gap-1">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link link-dark py-1">
+                                        <i class="bi bi-list me-2"></i> All Categories
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link link-dark py-1">
+                                        <i class="bi bi-plus-circle me-2"></i> New Category
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
+
+                    <!-- Comments — submenu -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark">
-                            <i class="bi bi-plus-circle me-2"></i> New Post
+                        <a href="#commentsMenu"
+                            class="nav-link d-flex justify-content-between align-items-center px-3 py-2 rounded-3 shadow-sm border text-dark"
+                            data-bs-toggle="collapse"
+                            role="button"
+                            aria-expanded="false">
+                            <span class="d-flex align-items-center fw-semibold">
+                                Comments
+                            </span>
+                            <i class="bi bi-chevron-down small opacity-50"></i>
                         </a>
+                        <div class="collapse" id="commentsMenu">
+                            <ul class="nav flex-column ms-3 mt-1 gap-1">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link link-dark py-1">
+                                        <i class="bi bi-list me-2"></i> All Comments
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
+
+                    <!-- Settings — submenu -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark">
-                            <i class="bi bi-chat-dots me-2"></i> Comments
+                        <a href="#settingsMenu"
+                            class="nav-link d-flex justify-content-between align-items-center px-3 py-2 rounded-3 shadow-sm border text-dark"
+                            data-bs-toggle="collapse"
+                            role="button"
+                            aria-expanded="false">
+                            <span class="d-flex align-items-center fw-semibold">
+                                Settings
+                            </span>
+                            <i class="bi bi-chevron-down small opacity-50"></i>
                         </a>
-                    </li>
-                    <li><hr></li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link link-dark">
-                            <i class="bi bi-gear me-2"></i> Settings
-                        </a>
+                        <div class="collapse" id="settingsMenu">
+                            <ul class="nav flex-column ms-3 mt-1 gap-1">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link link-dark py-1">
+                                        <i class="bi bi-person me-2"></i> Profile
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link link-dark py-1">
+                                        <i class="bi bi-lock me-2"></i> Password
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>
 
         </nav>
 
-        <!-- Main Content -->
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 overflow-y-auto"
-              style="height: calc(100vh - 56px);">
-
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4 h-100 overflow-auto">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2 class="fw-bold h3">Dashboard Overview</h2>
                 <button class="btn btn-primary shadow-sm rounded-pill px-3">
@@ -109,16 +182,19 @@
                 </div>
             </div>
 
-            <div class="card border-0 shadow-sm">
+            <div class="card border-0 shadow-sm mb-5">
                 <div class="card-body p-4">
                     <h5 class="fw-bold">Your Main Content</h5>
                     <hr>
                     <div class="alert alert-primary">
-                        <strong>Main Content</strong>
+                        <strong>Main Content Area</strong>
+                    </div>
+                    <div style="height: 300px;" class="bg-light border text-center pt-5">
+                        Scroll down to see independent movement...
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
 </div>
+<?php include 'include/script.php' ?>

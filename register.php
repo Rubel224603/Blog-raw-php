@@ -30,7 +30,7 @@ if (isset($_POST['registerBtn'])) {
 } ?>
 
 <?php  
-    include('include/header.php');
+    include('include/style.php');
     include('include/menu.php');
  ?>
 
@@ -78,4 +78,4 @@ if (isset($_POST['registerBtn'])) {
     </div>
 </div>
 
-<?php require_once 'include/footer.php'; ?>
+<?php require_once 'include/script.php'; ?>
