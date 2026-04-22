@@ -1,17 +1,15 @@
 <?php
-include 'config.php';
+
+
+include '../config.php';
 if (!isset($_SESSION['user_id'])) {
     header("location:login.php");
     exit;
 }
-
-
-    // echo "<pre>";
-    // print_r($_SESSION);
-    // echo "</pre>";
-
 ?>
-<?php include('include/style.php'); ?>
+<?php include('../include/style.php'); ?>
+
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow" style="height: 56px;">
     <div class="container-fluid">
@@ -203,4 +201,4 @@ if (!isset($_SESSION['user_id'])) {
         </main>
     </div>
 </div>
-<?php include 'include/script.php' ?>
+<?php include '../include/script.php' ?>
