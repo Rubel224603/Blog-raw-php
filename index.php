@@ -1,4 +1,5 @@
 <?php
+include('config.php');
 include('include/style.php');
 include('include/menu.php');
 
