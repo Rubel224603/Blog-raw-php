@@ -16,7 +16,7 @@ if (isset($_POST['loginBtn'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_name'] = $user['name'];
 
-            header("Location: " . BASE_URL . "backend/dashboard.php");
+            header("Location: " . BASE_URL . "admin/dashboard.php");
             exit();
         } else {
             echo "Password Invalid";
