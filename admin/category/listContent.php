@@ -2,7 +2,7 @@
     <div class="card-body p-4">
         <div class="card-header d-flex align-items-center justify-content-between mb-3">
             <h5 class="mb-0">Category List</h5>
-            <a href="create.php" class="btn btn-primary">Add Category</a>
+            <a href="category-create.php" class="btn btn-primary">Add Category</a>
         </div>
 
         <div class="table-responsive">

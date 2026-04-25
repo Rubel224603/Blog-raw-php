@@ -2,7 +2,7 @@
     <div class="card-body p-4">
         <div class="card-header d-flex align-items-center justify-content-between">
             <h5 class="mb-1">Add Category Form </h5>
-            <a href="list.php" class="btn btn-primary">See list</a>
+            <a href="category-list.php" class="btn btn-primary">See list</a>
             </hr>
         </div>
 

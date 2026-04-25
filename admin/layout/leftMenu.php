@@ -1,13 +1,16 @@
+<?php $base = "/blog_manegement/admin/"; ?>
 <!--left menu-->
 
 
 <div class="px-2 pt-4 pb-3 bg-dark-subtle">
-    <div class="p-2 rounded-1 shadow-sm border-0 bg-dark d-flex align-items-center justify-content-center">
-        <i class="bi bi-grid-fill text-warning me-2"></i>
-        <span class="fw-bold text-white small text-uppercase" style="letter-spacing: 1.5px;">
-            Dashboard
-        </span>
-    </div>
+    <a href="<?php echo $base ?>dashboard/index.php" class="text-decoration-none" style="display: block;">
+        <div class="p-2 rounded-1 shadow-sm border-0 bg-dark d-flex align-items-center justify-content-center">
+            <i class="bi bi-grid-fill text-warning me-2"></i>
+            <span class="fw-bold text-white small text-uppercase" style="letter-spacing: 1.5px;">
+                Dashboard
+            </span>
+        </div>
+    </a>
 </div>
 
 
@@ -29,12 +32,12 @@
             <div class="collapse" id="categoriesMenu">
                 <ul class="nav flex-column ms-3 mt-1 gap-1">
                     <li class="nav-item">
-                        <a href="category/list.php" class="nav-link link-dark py-1">
+                        <a href="<?php echo $base ?>category/category-list.php" class="nav-link link-dark py-1">
                             <i class="bi bi-list me-2"></i> All Categories
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="category-create.php" class="nav-link link-dark py-1">
+                        <a href="<?php echo $base ?>category/category-create.php" class="nav-link link-dark py-1">
                             <i class="bi bi-plus-circle me-2"></i>Create Category
                         </a>
                     </li>
@@ -56,12 +59,12 @@
             <div class="collapse" id="postsMenu">
                 <ul class="nav flex-column ms-3 mt-1 gap-1">
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark py-1">
+                        <a href="<?php echo $base ?>post/post-list.php" class="nav-link link-dark py-1">
                             <i class="bi bi-list me-2"></i> All Posts
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="create-post.php" class="nav-link link-dark py-1">
+                        <a href="<?php echo $base ?>post/post-create.php" class="nav-link link-dark py-1">
                             <i class="bi bi-plus-circle me-2"></i> Create Post
                         </a>
                     </li>
@@ -86,7 +89,7 @@
             <div class="collapse" id="commentsMenu">
                 <ul class="nav flex-column ms-3 mt-1 gap-1">
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark py-1">
+                        <a href="<?php echo $base ?>comments/comment-list.php" class="nav-link link-dark py-1">
                             <i class="bi bi-list me-2"></i> All Comments
                         </a>
                     </li>
