@@ -2,5 +2,5 @@
 
 
 require_once '../../config.php';
-$content = 'create-from.php';
+$content = 'profile-content.php';
 require_once '../layout/layout.php';

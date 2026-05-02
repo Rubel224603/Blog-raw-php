@@ -112,12 +112,12 @@
             <div class="collapse" id="settingsMenu">
                 <ul class="nav flex-column ms-3 mt-1 gap-1">
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark py-1">
+                        <a href="<?php echo $base ?>profile/profile.php" class="nav-link link-dark py-1">
                             <i class="bi bi-person me-2"></i> Profile
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link link-dark py-1">
+                        <a href="<?php echo $base ?>profile/password.php" class="nav-link link-dark py-1">
                             <i class="bi bi-lock me-2"></i> Password
                         </a>
                     </li>

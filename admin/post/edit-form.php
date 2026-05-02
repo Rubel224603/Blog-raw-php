@@ -1,7 +1,7 @@
 <div class="card border-0 shadow-sm mb-5">
     <div class="card-body p-4">
         <div class="card-header d-flex align-items-center justify-content-between">
-            <h5 class="mb-1">Add Blog Post</h5>
+            <h5 class="mb-1">Edit Blog Post</h5>
             <a href="post-list.php" class="btn btn-primary">See Posts</a>
         </div>
 
@@ -63,7 +63,7 @@
 
             <!-- Buttons -->
             <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-primary px-4">Publish</button>
+                <button type="submit" class="btn btn-primary px-4">Update</button>
                 <button type="reset" class="btn btn-outline-secondary px-4">Reset</button>
             </div>
 

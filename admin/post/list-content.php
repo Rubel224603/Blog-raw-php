@@ -28,7 +28,7 @@
                         <td><span class="badge bg-success">Published</span></td>
                         <td>23 Apr 2026</td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="edit-post.php" class="btn btn-sm btn-warning">Edit</a>
                             <a href="#" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>
@@ -54,7 +54,7 @@
                         <td><span class="badge bg-success">Published</span></td>
                         <td>20 Apr 2026</td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="<>" class="btn btn-sm btn-warning">Edit</a>
                             <a href="#" class="btn btn-sm btn-danger">Delete</a>
                         </td>
                     </tr>

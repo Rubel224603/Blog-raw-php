@@ -1,5 +1,5 @@
 <?php
 
     require_once '../../config.php';
-    $content = 'listContent.php';
+    $content = 'list-content.php';
     require_once '../layout/layout.php';

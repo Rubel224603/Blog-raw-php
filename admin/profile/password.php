@@ -2,5 +2,5 @@
 
 
 require_once '../../config.php';
-$content = 'create-from.php';
+$content = 'password-change-form.php';
 require_once '../layout/layout.php';
