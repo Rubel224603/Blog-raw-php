@@ -10,7 +10,7 @@
                     <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Articles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Categories</a></li>
-                    <li class="nav-item"><a class="btn btn-primary btn-sm ms-lg-3 text-white" href="frontend/login.php">Admin Login</a>
+                    <li class="nav-item"><a class="btn btn-primary btn-sm ms-lg-3 text-white" href="login.php">Admin Login</a>
                     </li>
                 </ul>
             </div>

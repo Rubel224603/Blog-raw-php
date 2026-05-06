@@ -1,6 +1,6 @@
 <?php
- include '../config.php';
-       include('../include/style.php');
+ include 'config.php';
+       include('include/style.php');
 
 $msg = "";
 

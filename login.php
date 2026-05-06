@@ -1,6 +1,6 @@
 <?php
 
-include '../config.php';
+include 'config.php';
 
 $msg = '';
 if (isset($_POST['loginBtn'])) {
@@ -25,7 +25,7 @@ if (isset($_POST['loginBtn'])) {
         echo "Email Invalid";
     }
 }
-include('../include/style.php');
+include('include/style.php');
 
 ?>
 
@@ -67,4 +67,4 @@ include('../include/style.php');
     </div>
 </div>
 
-<?php require_once '../include/script.php'; ?>
+<?php require_once 'include/script.php'; ?>
