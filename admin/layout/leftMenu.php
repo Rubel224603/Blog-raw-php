@@ -1,9 +1,9 @@
-<?php $base = "/blog_manegement/admin/"; ?>
+<?php $base = "/blog_management/admin/"; ?>
 <!--left menu-->
 
 
 <div class="px-2 pt-4 pb-3 bg-dark-subtle">
-    <a href="<?php echo $base ?>dashboard/index.php" class="text-decoration-none" style="display: block;">
+    <a href="<?php echo $base ?>index.php" class="text-decoration-none" style="display: block;">
         <div class="p-2 rounded-1 shadow-sm border-0 bg-dark d-flex align-items-center justify-content-center">
             <i class="bi bi-grid-fill text-warning me-2"></i>
             <span class="fw-bold text-white small text-uppercase" style="letter-spacing: 1.5px;">

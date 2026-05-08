@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    // define('BASE_URL', 'http://localhost/blog_manegement/');
+    // define('BASE_URL', 'http://localhost/blog_management/');
     define('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/' . basename(__DIR__) . '/');
     //echo  $_SERVER['HTTP_HOST'];
     
-    //define('ROOT', 'D:/xampp/htdocs/blog_manegement/');
+    //define('ROOT', 'D:/xampp/htdocs/blog_management /');
 
     define('ROOT', __DIR__ . '/'); //show current directory
      //echo ROOT;
