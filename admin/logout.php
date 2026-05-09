@@ -1,18 +1,8 @@
+
 <?php
-
-session_start();
-
-session_unset(); //erase session variable
-session_destroy(); //destroy session
-header("Location:../login.php");
-
-exit();
-
-
-
-
-
-
-
-
+    include '../config.php';
+    session_unset();
+    session_destroy();
+    header("Location: " . BASE_URL . "login.php");
+    exit();
 ?>

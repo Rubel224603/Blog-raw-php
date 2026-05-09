@@ -1,3 +1,12 @@
+<?php
+// if (isset($_SESSION['user_id'])) {
+//     print_r($_SESSION);
+// }
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: ../login.php");
+//     exit();
+// }
+?>
 <div class="card border-0 shadow-sm mb-5">
     <div class="card-body p-4">
         <div class="card-header d-flex align-items-center justify-content-between mb-3">

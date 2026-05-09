@@ -1,0 +1,7 @@
+<?php
+if (!isset($_SESSION['user_id'])) {
+    header("Location: " . BASE_URL . "login.php");
+    exit();
+}
+
+//same code in layout.php
