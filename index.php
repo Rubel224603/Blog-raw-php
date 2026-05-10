@@ -142,7 +142,7 @@
 
         </header>
 
-      
+
         <!-- Hero Section -->
         <section class="py-5">
             <div class="container">
@@ -965,3 +965,23 @@
 
         </footer>
     </body>
+
+    <?php
+    // ========================================
+    // index.php — Home Page
+    // ========================================
+
+    // ১. এই page এর নিজস্ব তথ্য set করো
+    $pageTitle       = 'Home — MyWebsite';
+    $pageDescription = 'Welcome to our homepage';
+    $pageSlug        = 'home';       // header এ active menu বুঝতে লাগবে
+    $showSidebar     = false;        // home page এ sidebar নেই
+    $contentFile     = 'include/pages/home_content.php'; // এই page এর content
+
+    // ২. Page-specific CSS/JS দরকার হলে add করো (না লাগলে বাদ দাও)
+    // $extraCSS = ['assets/css/home.css'];
+    // $extraJS  = ['assets/js/slider.js'];
+
+    // ৩. Master layout load করো — এটুকুই!
+    include 'master.php';
+    ?>
