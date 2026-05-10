@@ -1,236 +1,967 @@
-<?php
-include('config.php');
-include('include/style.php');
-include('include/menu.php');
+    <?php require_once 'config.php'; ?>
+    <!DOCTYPE html>
+    <html lang="en">
 
-?>
-<main>
-    <header class="py-5 bg-white border-bottom mb-5">
-        <div class="container">
-            <div class="text-center my-5">
-                <h1 class="fw-bolder display-4">The Developer's Log</h1>
-                <p class="lead text-muted mb-0">Insights on PHP, Laravel, and Product Engineering architecture.</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Developer Blog</title>
+
+        <?php require_once ROOT . 'include/style.php'; ?>
+    </head>
+
+    <body class="bg-body-tertiary">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+            <div class="container py-2">
+
+                <a class="navbar-brand fw-bold fs-3 text-dark" href="#">
+                    DevBlog
+                </a>
+
+                <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+
+                        <li class="nav-item">
+                            <a class="nav-link active fw-semibold" href="#">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="#">
+                                Articles
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold" href="#">
+                                Categories
+                            </a>
+                        </li>
+
+                        <li class="nav-item ms-lg-2">
+                            <a class="btn btn-dark rounded-pill px-4"
+                                href="login.php">
+
+                                Login
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
             </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="card mb-4 shadow-sm border-0">
-                    <img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d" alt="Featured">
-                    <div class="card-body">
-                        <div class="small text-muted">April 9, 2026</div>
-                        <h2 class="card-title h4 mt-2">Scalable Backend Patterns</h2>
-                        <p class="card-text">Building robust systems requires more than just code; it requires a
-                            product-focused mindset. Let's look at how to optimize Eloquent queries for high
-                            traffic.</p>
-                        <a class="btn btn-primary" href="#">Read full article →</a>
-                    </div>
-                </div>
+        </nav>
+        <!-- SIMPLE + GORGEOUS HERO HEADER -->
+        <header class="bg-white border-bottom">
 
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/700x350/adb5bd/495057" alt="Post">
-                            <div class="card-body">
-                                <h5 class="card-title">Mastering Docker</h5>
-                                <p class="card-text small text-muted">A beginner's guide to containerizing Laravel
-                                    apps with
-                                    WSL2.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="card h-100 shadow-sm border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/700x350/adb5bd/495057" alt="Post">
-                            <div class="card-body">
-                                <h5 class="card-title">RESTful API Best Practices</h5>
-                                <p class="card-text small text-muted">Ensuring your Sanctum-powered APIs are secure
-                                    and
-                                    efficient.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="container py-5">
 
-            <div class="col-lg-4">
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-header bg-dark text-white">Search</div>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Search for...">
-                            <button class="btn btn-primary" type="button">Go</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-header bg-dark text-white">Categories</div>
-                    <div class="card-body">
-                        <div class="d-flex flex-wrap gap-2">
-                            <a href="#" class="badge bg-light text-dark text-decoration-none border p-2">Laravel</a>
-                            <a href="#" class="badge bg-light text-dark text-decoration-none border p-2">PHP 8.3</a>
-                            <a href="#" class="badge bg-light text-dark text-decoration-none border p-2">DevOps</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-header bg-dark text-white fw-bold">Recent Comments</div>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action py-3">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1 fw-bold text-primary small">Md. Ridoy</h6>
-                                <small class="text-muted">5m ago</small>
-                            </div>
-                            <p class="mb-1 small text-secondary">"অসাধারণ টিউটোরিয়াল! ডাটাবেস অপ্টিমাইজেশন নিয়ে আরও জানতে চাই।"</p>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action py-3">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1 fw-bold text-primary small">Sabbir Ahmed</h6>
-                                <small class="text-muted">2h ago</small>
-                            </div>
-                            <p class="mb-1 small text-secondary">"Docker setup on WSL2 নিয়ে কি নতুন ভিডিও আসবে?"</p>
-                        </a>
-                    </div>
-                </div>
+                <div class="row align-items-center g-5">
 
-                <div class="card mb-4 border-0 shadow-sm">
-                    <div class="card-header bg-dark text-white fw-bold">Popular Articles</div>
-                    <div class="card-body">
-                        <div class="d-flex mb-3 align-items-center">
-                            <img src="https://dummyimage.com/60x60/dee2e6/6c757d" class="rounded me-3" alt="Thumb">
+                    <!-- TEXT -->
+                    <div class="col-lg-6">
+
+                        <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2 mb-3">
+                            DevBlog Platform
+                        </span>
+
+                        <h1 class="display-5 fw-bold text-dark">
+                            Learn Modern <br>
+                            <span class="text-primary">Backend Development</span>
+                        </h1>
+
+                        <p class="text-muted lead mt-3">
+                            Simple, practical and real-world tutorials on Laravel, APIs, PHP and scalable web development.
+                        </p>
+
+                        <!-- BUTTONS -->
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+
+                            <a href="#"
+                                class="btn btn-primary rounded-pill px-4">
+
+                                Start Learning
+                            </a>
+
+                            <a href="#"
+                                class="btn btn-outline-dark rounded-pill px-4">
+
+                                Explore Articles
+                            </a>
+
+                        </div>
+
+                        <!-- STATS -->
+                        <div class="d-flex gap-4 mt-5 flex-wrap">
+
                             <div>
-                                <a href="#" class="text-decoration-none fw-bold small text-dark">How to use Sanctum in Laravel</a>
-                                <div class="text-muted" style="font-size: 11px;">1.2k Views</div>
+                                <h4 class="fw-bold mb-0 text-dark">500+</h4>
+                                <small class="text-muted">Articles</small>
                             </div>
-                        </div>
-                        <div class="d-flex mb-0 align-items-center">
-                            <img src="https://dummyimage.com/60x60/dee2e6/6c757d" class="rounded me-3" alt="Thumb">
+
                             <div>
-                                <a href="#" class="text-decoration-none fw-bold small text-dark">PHP 8.3 Feature List</a>
-                                <div class="text-muted" style="font-size: 11px;">950 Views</div>
+                                <h4 class="fw-bold mb-0 text-dark">30k+</h4>
+                                <small class="text-muted">Readers</small>
                             </div>
+
+                            <div>
+                                <h4 class="fw-bold mb-0 text-dark">100+</h4>
+                                <small class="text-muted">Guides</small>
+                            </div>
+
                         </div>
+
                     </div>
+
+                    <!-- IMAGE -->
+                    <div class="col-lg-6 text-center">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png"
+                            class="img-fluid"
+                            style="max-width: 380px;"
+                            alt="Developer Illustration">
+
+                    </div>
+
                 </div>
 
             </div>
-        </div>
-    </div>
-    <section class="container my-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <h3 class="mb-4 fw-bold border-bottom pb-2">Latest Articles</h3>
+
+        </header>
+
+      
+        <!-- Hero Section -->
+        <section class="py-5">
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-6">
+
+                        <span class="badge bg-dark rounded-pill px-3 py-2 mb-3">
+                            Developer Blog
+                        </span>
+
+                        <h1 class="display-4 fw-bold text-dark">
+                            Learn Laravel,
+                            PHP & Modern Backend Development
+                        </h1>
+
+                        <p class="lead text-secondary mt-4">
+                            Simple and practical tutorials about APIs,
+                            clean code, Docker and scalable applications.
+                        </p>
+
+                        <div class="d-flex gap-3 mt-4 flex-wrap">
+
+                            <a href="#articles"
+                                class="btn btn-dark rounded-pill px-4 py-2">
+
+                                Explore Articles
+                            </a>
+
+                            <a href="#"
+                                class="btn btn-outline-dark rounded-pill px-4 py-2">
+
+                                Join Community
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <img src="https://dummyimage.com/700x500/212529/ffffff&text=Developer+Blog"
+                            class="img-fluid rounded-4 shadow"
+                            alt="Blog">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <!-- Featured Article -->
+        <section class="pb-5">
+            <div class="container">
+
+                <div class="card border-0 shadow rounded-4 overflow-hidden">
+
+                    <div class="row g-0 align-items-center">
+
+                        <div class="col-lg-6">
+
+                            <img src="https://dummyimage.com/800x500/343a40/ffffff&text=Laravel+Architecture"
+                                class="img-fluid h-100 object-fit-cover"
+                                alt="Featured">
+
+                        </div>
+
+                        <div class="col-lg-6">
+
+                            <div class="card-body p-4 p-lg-5">
+
+                                <span class="badge bg-primary rounded-pill px-3 py-2 mb-3">
+                                    Featured
+                                </span>
+
+                                <h2 class="fw-bold">
+                                    Scalable Backend Patterns in Laravel
+                                </h2>
+
+                                <p class="text-secondary mt-3">
+                                    Learn how to structure enterprise-level Laravel
+                                    applications using repositories, services,
+                                    queues and caching.
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+
+                                    <small class="text-muted">
+                                        May 10, 2026 · 5 min read
+                                    </small>
+
+                                    <a href="#"
+                                        class="btn btn-dark rounded-pill px-4">
+
+                                        Read More
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Articles -->
+        <section class="pb-5" id="articles">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <h2 class="fw-bold">
+                        Latest Articles
+                    </h2>
+
+                    <a href="#"
+                        class="text-dark text-decoration-none fw-semibold">
+
+                        View All
+                    </a>
+
+                </div>
 
                 <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                            <div class="position-relative">
-                                <img src="https://dummyimage.com/600x400/343a40/ffffff&text=Laravel+Tips"
-                                    class="card-img-top" alt="Blog">
-                                <span class="badge bg-primary position-absolute top-0 end-0 m-3">New</span>
-                            </div>
+
+                    <!-- Article -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                            <img src="https://dummyimage.com/600x400/198754/ffffff&text=Docker"
+                                class="card-img-top rounded-top-4"
+                                alt="Docker">
+
                             <div class="card-body">
-                                <h5 class="card-title fw-bold">Optimizing Eloquent Queries</h5>
-                                <p class="card-text text-muted small">Learn how to reduce database load by using
-                                    'Eager
-                                    Loading' effectively in your Laravel projects.</p>
+
+                                <span class="badge bg-success rounded-pill mb-3">
+                                    DevOps
+                                </span>
+
+                                <h5 class="fw-bold">
+                                    Docker Setup for Laravel
+                                </h5>
+
+                                <p class="text-secondary small">
+                                    Setup Docker, Nginx and MySQL
+                                    for modern Laravel projects.
+                                </p>
+
                             </div>
-                            <div class="card-footer bg-transparent border-0 pb-3">
-                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Read Article</a>
+
+                            <div class="card-footer bg-white border-0 pb-4">
+
+                                <a href="#"
+                                    class="btn btn-outline-dark rounded-pill btn-sm">
+
+                                    Read Article
+                                </a>
+
                             </div>
+
                         </div>
+
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="card h-100 shadow-sm border-0 overflow-hidden">
-                            <img src="https://dummyimage.com/600x400/495057/ffffff&text=PHP+8.3"
-                                class="card-img-top" alt="Blog">
+                    <!-- Article -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                            <img src="https://dummyimage.com/600x400/0d6efd/ffffff&text=REST+API"
+                                class="card-img-top rounded-top-4"
+                                alt="API">
+
                             <div class="card-body">
-                                <h5 class="card-title fw-bold">PHP 8.3 New Features</h5>
-                                <p class="card-text text-muted small">A deep dive into the latest updates in PHP 8.3
-                                    and how
-                                    it improves your backend performance.</p>
+
+                                <span class="badge bg-primary rounded-pill mb-3">
+                                    API
+                                </span>
+
+                                <h5 class="fw-bold">
+                                    REST API Best Practices
+                                </h5>
+
+                                <p class="text-secondary small">
+                                    Build secure and scalable APIs
+                                    with Laravel Sanctum.
+                                </p>
+
                             </div>
-                            <div class="card-footer bg-transparent border-0 pb-3">
-                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill">Read Article</a>
+
+                            <div class="card-footer bg-white border-0 pb-4">
+
+                                <a href="#"
+                                    class="btn btn-outline-dark rounded-pill btn-sm">
+
+                                    Read Article
+                                </a>
+
                             </div>
+
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4">
-                <div class="card mb-4 shadow-sm border-0">
-                    <div class="card-header bg-dark text-white fw-bold">Popular Tags</div>
-                    <div class="card-body">
-                        <div class="d-flex flex-wrap gap-2">
-                            <a href="#" class="btn btn-sm btn-light border">#Laravel</a>
-                            <a href="#" class="btn btn-sm btn-light border">#PHP</a>
-                            <a href="#" class="btn btn-sm btn-light border">#Docker</a>
-                            <a href="#" class="btn btn-sm btn-light border">#APIs</a>
-                            <a href="#" class="btn btn-sm btn-light border">#MySQL</a>
-                            <a href="#" class="btn btn-sm btn-light border">#CleanCode</a>
+                    </div>
+
+                    <!-- Article -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <div class="card border-0 shadow-sm rounded-4 h-100">
+
+                            <img src="https://dummyimage.com/600x400/f59f00/ffffff&text=PHP+8.3"
+                                class="card-img-top rounded-top-4"
+                                alt="PHP">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-warning text-dark rounded-pill mb-3">
+                                    PHP
+                                </span>
+
+                                <h5 class="fw-bold">
+                                    What's New in PHP 8.3
+                                </h5>
+
+                                <p class="text-secondary small">
+                                    Explore the latest features
+                                    and performance improvements.
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer bg-white border-0 pb-4">
+
+                                <a href="#"
+                                    class="btn btn-outline-dark rounded-pill btn-sm">
+
+                                    Read Article
+                                </a>
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
 
-                <div class="card mb-4 shadow-sm border-0">
-                    <div class="card-header bg-dark text-white fw-bold">Recent Comments</div>
-                    <div class="list-group list-group-flush">
-                        <a href="#" class="list-group-item list-group-item-action py-3">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1 fw-bold text-primary">Md. Ridoy</h6>
-                                <small class="text-muted">3m ago</small>
-                            </div>
-                            <p class="mb-1 small text-secondary text-truncate">"Great post on database optimization!
-                                Really
-                                helpful for our LMS project."</p>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action py-3">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h6 class="mb-1 fw-bold text-primary">John Doe</h6>
-                                <small class="text-muted">1h ago</small>
-                            </div>
-                            <p class="mb-1 small text-secondary text-truncate">"Can you explain more about Docker
-                                setup on
-                                WSL?"</p>
-                        </a>
                     </div>
-                </div>
 
+                </div>
 
             </div>
-        </div>
+        </section>
 
-        <nav aria-label="Page navigation" class="mt-5">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled"><a class="page-link shadow-none border-0 bg-light rounded-start px-3"
-                        href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link shadow-none border-0 px-3" href="#">1</a></li>
-                <li class="page-item"><a class="page-link shadow-none border-0 px-3" href="#">2</a></li>
-                <li class="page-item"><a class="page-link shadow-none border-0 bg-light rounded-end px-3"
-                        href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
-    </section>
 
-    <section class="py-5 bg-light border-top border-bottom">
-        <div class="container text-center">
-            <h2 class="fw-bold">Don't miss a post!</h2>
-            <p class="text-muted">Sign up for our weekly developer newsletter.</p>
-            <div class="row justify-content-center">
-                <div class="col-md-6 mt-3">
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Email address">
-                        <button class="btn btn-primary">Subscribe</button>
-                    </div>
+
+        <section class="py-5 bg-light">
+            <div class="container">
+
+                <!-- Section Title -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <h2 class="fw-bold mb-0">
+                        Latest Articles
+                    </h2>
+
+                    <a href="#" class="text-decoration-none fw-semibold">
+                        View All →
+                    </a>
+
                 </div>
-            </div>
-        </div>
-    </section>
-</main>
 
-<?php include 'include/footer.php' ?>
-<?php include 'include/script.php' ?>
+                <div class="row g-4">
+
+                    <!-- Card 1 -->
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <img src="https://dummyimage.com/600x400/0d6efd/ffffff&text=Laravel"
+                                class="card-img-top"
+                                alt="Laravel">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-primary mb-2">
+                                    Laravel
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    Clean Architecture
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Learn scalable Laravel structure.
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer bg-white border-0">
+
+                                <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">
+                                    Read More
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <img src="https://dummyimage.com/600x400/198754/ffffff&text=API"
+                                class="card-img-top"
+                                alt="API">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-success mb-2">
+                                    API
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    REST API Guide
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Secure API with Laravel Sanctum.
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer bg-white border-0">
+
+                                <a href="#" class="btn btn-sm btn-outline-success rounded-pill">
+                                    Read More
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <img src="https://dummyimage.com/600x400/f59f00/ffffff&text=PHP"
+                                class="card-img-top"
+                                alt="PHP">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-warning text-dark mb-2">
+                                    PHP
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    PHP 8.3 Features
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Explore modern PHP updates.
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer bg-white border-0">
+
+                                <a href="#" class="btn btn-sm btn-outline-warning rounded-pill">
+                                    Read More
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col-md-6 col-lg-3">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <img src="https://dummyimage.com/600x400/d63384/ffffff&text=Docker"
+                                class="card-img-top"
+                                alt="Docker">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-danger mb-2">
+                                    DevOps
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    Docker Setup
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Laravel with Docker environment.
+                                </p>
+
+                            </div>
+
+                            <div class="card-footer bg-white border-0">
+
+                                <a href="#" class="btn btn-sm btn-outline-danger rounded-pill">
+                                    Read More
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="py-5 bg-white">
+            <div class="container">
+
+                <div class="mb-4">
+                    <h2 class="fw-bold">Tech Insights</h2>
+                    <p class="text-muted">Latest updates from backend, APIs & modern development</p>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- Card 1 -->
+                    <div class="col-md-4">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-primary mb-2">Laravel</span>
+
+                                <h5 class="fw-bold">Service Container Magic</h5>
+
+                                <p class="text-muted small">
+                                    Understand dependency injection and how Laravel resolves classes automatically.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-4">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-success mb-2">API</span>
+
+                                <h5 class="fw-bold">JWT vs Sanctum</h5>
+
+                                <p class="text-muted small">
+                                    Compare authentication systems for modern API security.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-4">
+
+                        <div class="card border-0 shadow-sm h-100">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-dark mb-2">Backend</span>
+
+                                <h5 class="fw-bold">Queue System Basics</h5>
+
+                                <p class="text-muted small">
+                                    Improve performance using Laravel queues and jobs.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <section class="py-5 bg-light">
+
+            <div class="container">
+
+                <!-- Heading -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+
+                    <div>
+                        <h2 class="fw-bold mb-1">
+                            Trending Articles
+                        </h2>
+
+                        <p class="text-muted mb-0">
+                            Latest technology and backend development blogs
+                        </p>
+                    </div>
+
+                    <a href="#"
+                        class="btn btn-dark rounded-pill px-4">
+
+                        View All
+                    </a>
+
+                </div>
+
+                <!-- 5 Cards -->
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+                    <!-- Card 1 -->
+                    <div class="col">
+
+                        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+
+                            <img src="https://dummyimage.com/500x350/0d6efd/ffffff&text=Laravel"
+                                class="card-img-top"
+                                alt="Laravel">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-primary rounded-pill mb-2">
+                                    Laravel
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    Laravel Architecture
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Learn scalable backend structure.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col">
+
+                        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+
+                            <img src="https://dummyimage.com/500x350/198754/ffffff&text=API"
+                                class="card-img-top"
+                                alt="API">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-success rounded-pill mb-2">
+                                    API
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    REST API Security
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Secure your APIs with Sanctum.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col">
+
+                        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+
+                            <img src="https://dummyimage.com/500x350/f59f00/ffffff&text=PHP+8.3"
+                                class="card-img-top"
+                                alt="PHP">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-warning text-dark rounded-pill mb-2">
+                                    PHP
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    PHP 8.3 Features
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Explore modern PHP improvements.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col">
+
+                        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+
+                            <img src="https://dummyimage.com/500x350/d63384/ffffff&text=Docker"
+                                class="card-img-top"
+                                alt="Docker">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-danger rounded-pill mb-2">
+                                    DevOps
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    Docker Setup
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Laravel with Docker environment.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="col">
+
+                        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+
+                            <img src="https://dummyimage.com/500x350/212529/ffffff&text=MySQL"
+                                class="card-img-top"
+                                alt="MySQL">
+
+                            <div class="card-body">
+
+                                <span class="badge bg-dark rounded-pill mb-2">
+                                    Database
+                                </span>
+
+                                <h6 class="fw-bold">
+                                    MySQL Optimization
+                                </h6>
+
+                                <p class="text-muted small mb-0">
+                                    Improve query performance easily.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-5">
+
+            <div class="container">
+
+                <!-- Top -->
+                <div class="row align-items-center gy-4">
+
+                    <!-- Brand -->
+                    <div class="col-lg-4">
+
+                        <h2 class="fw-bold mb-2">
+                            DevBlog
+                        </h2>
+
+                        <p class="text-light-emphasis mb-0">
+                            Modern tech blog about Laravel,
+                            PHP, APIs and backend engineering.
+                        </p>
+
+                    </div>
+
+                    <!-- Center Links -->
+                    <div class="col-lg-4">
+
+                        <div class="d-flex justify-content-lg-center gap-4 flex-wrap">
+
+                            <a href="#"
+                                class="text-decoration-none text-white fw-semibold">
+
+                                Home
+                            </a>
+
+                            <a href="#"
+                                class="text-decoration-none text-white fw-semibold">
+
+                                Articles
+                            </a>
+
+                            <a href="#"
+                                class="text-decoration-none text-white fw-semibold">
+
+                                Categories
+                            </a>
+
+                            <a href="#"
+                                class="text-decoration-none text-white fw-semibold">
+
+                                Contact
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="col-lg-4">
+
+                        <div class="d-flex justify-content-lg-end gap-3">
+
+                            <!-- Facebook -->
+                            <a href="#"
+                                class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 45px; height: 45px;">
+
+                                <i class="bi bi-facebook"></i>
+
+                            </a>
+
+                            <!-- Github -->
+                            <a href="#"
+                                class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 45px; height: 45px;">
+
+                                <i class="bi bi-github"></i>
+
+                            </a>
+
+                            <!-- Linkedin -->
+                            <a href="#"
+                                class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 45px; height: 45px;">
+
+                                <i class="bi bi-linkedin"></i>
+
+                            </a>
+
+                            <!-- Youtube -->
+                            <a href="#"
+                                class="btn btn-outline-light rounded-circle d-flex align-items-center justify-content-center"
+                                style="width: 45px; height: 45px;">
+
+                                <i class="bi bi-youtube"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Divider -->
+                <hr class="border-secondary my-4">
+
+                <!-- Bottom -->
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+
+                    <small class="text-light-emphasis">
+                        © 2026 DevBlog. All rights reserved.
+                    </small>
+
+                    <div class="d-flex gap-3">
+
+                        <a href="#"
+                            class="text-decoration-none text-light-emphasis small">
+
+                            Privacy Policy
+                        </a>
+
+                        <a href="#"
+                            class="text-decoration-none text-light-emphasis small">
+
+                            Terms
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+    </body>
