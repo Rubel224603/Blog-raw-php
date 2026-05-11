@@ -1,52 +1,50 @@
+<?php require_once('config.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $pageTitle; ?></title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 
     <!-- Common CSS  -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    
+    <?php require_once ROOT . 'include/style.php'; ?>
 
 </head>
 
-<body class="page-<?= $pageSlug ?? 'default' ?>">
+<body>
 
     <!-- ===== HEADER ===== -->
-    <?php include 'include/header.php'; ?>
+
+    <?php require_once ROOT . 'include/menu.php'; ?>
+
+
 
     <!-- ===== MAIN WRAPPER ===== -->
     <div class="main-wrapper">
 
-        <?php if ($showSidebar ?? false): ?>
-          
-            <aside class="sidebar">
-                <?php include 'include/sidebar.php'; ?>
-            </aside>
-            <main class="content with-sidebar">
-            <?php else: ?>
-                <main class="content full-width">
-                <?php endif; ?>
+        <main class="content">
 
-                <!-- ===== PAGE CONTENT — এখানে প্রতিটা page এর content আসবে ===== -->
-                <?php include $contentFile; ?>
+            <!-- ===== PAGE CONTENT  ===== -->
+            <?php include $contentFile; ?>
 
-                </main>
+        </main>
 
     </div>
     <!-- ===== END MAIN WRAPPER ===== -->
 
     <!-- ===== FOOTER ===== -->
-    <?php include 'include/footer.php'; ?>
+    <?php require_once ROOT . 'include/footer.php'; ?>
 
     <!-- Common JS -->
-    <script src="assets/js/main.js"></script>
+    <?php require_once ROOT . 'include/script.php'; ?>
 
-  
+
+
+
 </body>
 
 </html>
