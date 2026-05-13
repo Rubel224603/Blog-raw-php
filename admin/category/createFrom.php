@@ -1,12 +1,49 @@
+<?php
+
+
+$msg = '';
+if (isset($_POST['categoryAddBtn'])) {
+    $name = $_POST['name'];
+    $slug = $_POST['slug'];
+    $status = $_POST['status'];
+    $description = $_POST['description'];
+    //echo $name, $slug, $status, $description;
+
+    $insertQuery = "INSERT INTO categories(name,slug,status,description) VALUES('$name','$slug','$status','$description') ";
+    $runQuery = mysqli_query($db, $insertQuery);
+
+    if (!$runQuery) {
+        $msg ="danger";
+    } else {
+        $msg ="success";
+        $mst_type ="Successfully category added";
+    }
+}
+
+
+
+
+
+
+?>
+
+
+
+
 <div class="card border-0 shadow-sm mb-5">
     <div class="card-body p-4">
+        <?php if ($msg != "") { ?>
+            <div class="alert alert-<?php echo $msg; ?> alert-dismissible fade show" role="alert">
+                <?php echo $mst_type; ?>
+            </div>
+        <?php } ?>
         <div class="card-header d-flex align-items-center justify-content-between">
             <h5 class="mb-1">Add Category Form </h5>
             <a href="category-list.php" class="btn btn-primary">See list</a>
             </hr>
         </div>
 
-        <form method="POST" action="" class="mt-3">
+        <form method="POST" action="category-create.php" class="mt-3">
 
             <!-- Category Name -->
             <div class="mb-2">
@@ -46,7 +83,7 @@
 
             <!-- Buttons -->
             <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-primary px-4">Save</button>
+                <button type="submit" name="categoryAddBtn" class="btn btn-primary px-4">Add Category</button>
                 <button type="reset" class="btn btn-outline-secondary px-4">Reset</button>
             </div>
 

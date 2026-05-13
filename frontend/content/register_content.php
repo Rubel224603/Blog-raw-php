@@ -17,6 +17,7 @@ if (isset($_POST['registerBtn'])) {
 
         if ($runQuery) {
             $msg = "Registration Successful!";
+            
             $msg_type = "success";
         } else {
             $msg = "Error: " . mysqli_error($db);

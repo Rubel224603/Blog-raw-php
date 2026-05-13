@@ -17,26 +17,26 @@
 
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- HEADER  -->
 
     <?php require_once ROOT . 'include/menu.php'; ?>
 
 
 
-    <!-- ===== MAIN WRAPPER ===== -->
+    <!--  MAIN WRAPPER -->
     <div class="main-wrapper">
 
         <main class="content">
 
-            <!-- ===== PAGE CONTENT  ===== -->
+            <!--  PAGE CONTENT   -->
             <?php include $contentFile; ?>
 
         </main>
 
     </div>
-    <!-- ===== END MAIN WRAPPER ===== -->
+    <!-- END MAIN WRAPPER -->
 
-    <!-- ===== FOOTER ===== -->
+    <!--FOOTER -->
     <?php require_once ROOT . 'include/footer.php'; ?>
 
     <!-- Common JS -->

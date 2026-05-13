@@ -3,6 +3,7 @@
     // define('BASE_URL', 'http://localhost/blog_management/');
     define('BASE_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/' . basename(__DIR__) . '/');
     //echo  $_SERVER['HTTP_HOST'];
+    //echo  BASE_URL;
 
     //define('ROOT', 'D:/xampp/htdocs/blog_management /');
 
