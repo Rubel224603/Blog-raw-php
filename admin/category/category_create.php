@@ -1,7 +1,7 @@
 <?php
 
 require_once '../../config.php';
-$content = 'createFrom.php';
+$content = 'category_edit_from.php';
 require_once '../layout/layout.php';
 
 

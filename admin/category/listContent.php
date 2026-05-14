@@ -53,7 +53,7 @@ $rows  =  mysqli_num_rows($runQuery); //check how many rows are presenet
                     while ($row = mysqli_fetch_assoc($runQuery)) {
                     ?>
                         <tr>
-                            
+
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo $row['name']; ?></td>
                             <td><?php echo $row['slug']; ?></td>
@@ -67,14 +67,14 @@ $rows  =  mysqli_num_rows($runQuery); //check how many rows are presenet
                             </td>
                             <td><?php echo date('d M Y', strtotime($row['created_at'])); ?></td>
                             <td>
-                                <a href="" class="btn btn-success">edit</a>
-                                <a href="" class="btn btn-danger">delete</a>
+                                <a href="category-edit.php?id=<?php echo $row['id'];?>" class="btn btn-success">edit</a>
+                                <a href="<?php echo "category-delete.php/" . $row['id'] ?>" class="btn btn-danger">delete</a>
                             </td>
                         </tr>
                     <?php
-                    } 
+                    }
                     ?>
-                  
+
                 </tbody>
             </table>
         </div>
